@@ -112,6 +112,11 @@
 				<p><strong>BMR: </strong><span>{bmr}</span></p>
 				<p><strong>TDEE: </strong><span>{tdee}</span></p>
 				<div>
+								<ul>
+												{#each breaks as b}
+																<li><strong>{b}:</strong> {~~(tdee * b)}</li>
+												{/each}
+								</ul>
 				</div>
 </div>
 
@@ -145,6 +150,7 @@
 								0.8,
 								0.85,
 								0.9,
+								1,
 								1.1,
 								1.15,
 								1.2,
