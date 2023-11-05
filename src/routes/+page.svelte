@@ -55,47 +55,53 @@
 
 				<div>
 
-								<label>No Exercise
-												<input
-																type="radio"
-																bind:group={exercise}
-																name="exercise"
-																value="none"
-												/>
-								</label>
+								<div>
+												<label>No Exercise
+																<input
+																				type="radio"
+																				bind:group={exercise}
+																				name="exercise"
+																				value="none"
+																/>
+												</label>
+								</div>
+
+								<div>
+												<label>Light Exercise (1-3 days per week)
+																<input
+																				type="radio"
+																				bind:group={exercise}
+																				name="exercise"
+																				value="light"
+																/>
+												</label>
+								</div>
+
+								<div>
+												<label>Moderate Exercise (3-5 days per week)
+																<input
+																				type="radio"
+																				bind:group={exercise}
+																				name="exercise"
+																				value="moderate"
+																/>
+												</label>
+								</div>
 
 
-								<label>Light Exercise (1-3 days per week)
-												<input
-																type="radio"
-																bind:group={exercise}
-																name="exercise"
-																value="light"
-												/>
-								</label>
-				</div>
-				<div>
-
-								<label>Moderate Exercise (3-5 days per week)
-												<input
-																type="radio"
-																bind:group={exercise}
-																name="exercise"
-																value="moderate"
-												/>
-								</label>
+								<div>
+												<label>Very Active (6-7 days per week)
+																<input
+																				type="radio"
+																				bind:group={exercise}
+																				name="exercise"
+																				value="very"
+																/>
+												</label>
+								</div>
 
 
-								<label>Very Active (6-7 days per week)
-												<input
-																type="radio"
-																bind:group={exercise}
-																name="exercise"
-																value="very"
-												/>
-								</label>
-
-
+								<div>
 								<label>Incredibly Active (Multiple times a day, every day)
 												<input
 																type="radio"
@@ -104,6 +110,7 @@
 																value="incredible"
 												/>
 								</label>
+								</div>
 				</div>
 </div>
 
