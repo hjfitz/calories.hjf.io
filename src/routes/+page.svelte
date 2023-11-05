@@ -168,8 +168,5 @@
 								tdee = calculateTDEE()
 								bmr = calculateBMR()
 				}
-
-
 				
-				export const prerender = false
 </script>
