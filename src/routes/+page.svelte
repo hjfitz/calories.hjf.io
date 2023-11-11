@@ -25,7 +25,7 @@
 																name="gender"
 																value="male"
 												/>
-Male
+								Male
 								</label>
 
 
@@ -36,7 +36,7 @@ Male
 																name="gender"
 																value="female"
 												/>
-Female
+								Female
 								</label>
 				</div>
 </div>
@@ -127,12 +127,12 @@ Female
 								'Incredibly active (Multiple times a day, daily)'
 				]
 
-				let gender = 'male'
-				let exercise = 3
+				let gender = getValue('gender', 'male')
+				let exercise = getValue('exercise', 3)
 				let exerciseDecoded = getActivityVerb[exercise]
-				let height = 180
-				let weight = 80
-				let age = 28
+				let height = getValue('height', 180)
+				let weight = getValue('weight', 80)
+				let age = getValue('age', 28)
 
 				function getPerc(val: number) {
 				return `${Math.round(val * 100)}%`
@@ -165,16 +165,34 @@ Female
 
 				$: {
 								// why is this necessary
-								gender = gender
-								exercise = exercise
-								height = height
-								weight = weight
-								age = age
+								gender = storeValue('gender', gender)
+								exercise = storeValue('exercise', exercise)
+								height = storeValue('height', height)
+								weight = storeValue('weight', weight)
+								age = storeValue('age', age)
 								exerciseDecoded = getActivityVerb[Math.floor(exercise)]
 
 								// uhhh
 								tdee = calculateTDEE()
 								bmr = calculateBMR()
 				}
-				
+
+				function storeValue<T extends string | number>(key: string, val: T) {
+								if (typeof window === 'undefined') return val
+								localStorage.setItem(key, val.toString())
+								return val
+				}
+
+				function getValue<T extends string | number>(key: string, fallback: T): T {
+								if (typeof window === 'undefined') return fallback
+								const found = localStorage.getItem(key)
+								if (!found) {
+												localStorage.setItem(key, fallback.toString())
+												return fallback
+								}
+								// @ts-expect-error works in js
+								if (isNaN(found)) return found
+								return parseFloat(found) as T // 2-way data binding is never complex
+				}
+
 </script>
