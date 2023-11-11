@@ -4,14 +4,13 @@
 				todo:
 				- autosave fields to localstorage
 -->
-<main class="container px-4 py-2 bg-gray-900 text-white min-h-full">
+<main class="container px-4 py-2 bg-gray-900 text-white min-h-full min-w-full">
 <header class="text-center">
 				<h1 class="text-2xl font-semibold m-4">Calorie Calculator</h1>
 </header>
 <div class="text-sm text-gray-400">
 				<p>
-								Use this page to calculate how much energy you burn a day, 
-								as well as how much you might want to eat in order to gain or lose weight.
+								Calculate Your Daily Calorie Needs for Weight Loss, Gain, or Maintenance
 				</p>
 </div>
 
